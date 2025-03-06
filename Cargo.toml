@@ -1,0 +1,7 @@
+[package]
+name = "mlp"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+expander_compiler = { path = "../ExpanderCompilerCollection/expander_compiler" }
