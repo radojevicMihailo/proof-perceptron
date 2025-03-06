@@ -7,8 +7,10 @@ pub struct Float {
     exponent: u8,
 }
 
+#[allow(dead_code)]
 pub static PRECISION : u8 = 7;
 
+#[allow(dead_code)]
 pub fn relu(num: Float) -> Float {
     let mut res: Float = num;
     if res.positive == false {
@@ -18,6 +20,7 @@ pub fn relu(num: Float) -> Float {
     res
 }
 
+#[allow(dead_code)]
 pub fn truncate(num: Float) -> Float {
     let lookup: [u64; 20] = [
         1,
@@ -75,6 +78,7 @@ pub fn truncate(num: Float) -> Float {
     res
 }
 
+#[allow(dead_code)]
 pub fn mul_floats(x: Float, y: Float) -> Float {
     let mant = x.mantissa * y.mantissa;
     let exp = x.exponent + y.exponent - 100;
@@ -90,6 +94,7 @@ pub fn mul_floats(x: Float, y: Float) -> Float {
     res_trun
 }
 
+#[allow(dead_code)]
 pub fn div_floats(x: Float, y: Float) -> Float {
 
     assert!(y.mantissa > 0);
@@ -132,6 +137,7 @@ pub fn div_floats(x: Float, y: Float) -> Float {
     res_trun
 }
 
+#[allow(dead_code)]
 pub fn add_floats(x: Float, y: Float) -> Float {
     let mut mant_1: u64 = x.mantissa;
     let mut mant_2: u64 = y.mantissa;
@@ -175,6 +181,7 @@ pub fn add_floats(x: Float, y: Float) -> Float {
     res_trun
 }
 
+#[allow(dead_code)]
 pub fn sub_floats(x: Float, y : Float) -> Float {
     let z = Float {positive: !y.positive, mantissa: y.mantissa, exponent: y.exponent};
     let res = add_floats(x, z);
